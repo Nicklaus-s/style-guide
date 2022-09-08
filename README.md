@@ -9,7 +9,7 @@ The purpose of this guide is to keep consistent and clean code. This guide value
 
 * Optimize code for reading, not writing.
 	* You will write your code once. Many people will need to read it, from reviewers, and to anyone who wishes to use the code - even you.
-	* Consider what diffs will look like. It's much easier to read a diff that doesn't involve movnig things between lines. Clean diffs means your code will be reviewed easier & faster.
+	* Consider what diffs will look like. It's much easier to read a diff that doesn't involve moving things between lines. Clean diffs means your code will be reviewed easier & faster.
 
 * Avoid magic.
 	* Avoid using deprecated features or writing code that does not make much sense. Magical code is nice to use, until something goes wrong - no one knows why it broke or how to fix it.
@@ -17,6 +17,62 @@ The purpose of this guide is to keep consistent and clean code. This guide value
 
 # Guide
 Finally, you made it! This is where the style guide begins.
+
+## File Structure
+Files should consist of these things in order.
+
+* Block comment that mentions basic information about the file.
+```lua
+--[[
+File.server.lua
+Nicklaus_s
+25 September 2022
+
+File that handles essentials for the game to run.
+Initializes all modules in a specific order.
+--]]
+```
+
+* Services used by the file
+  * All services should be received by using `DataModel:GetService()`
+
+* Module imports
+
+* Assets
+  * Define all assets using `WaitForChild` (if applicable)
+
+* Variables
+  * Define all non-constant variables that will be modified
+  * Tables should go last (if applicable)
+
+* Constants
+  * Define all constants using `LOUD_SNAKE_CASE`
+  * Tables should go last
+
+I'll show an example below.
+
+```lua
+--[[
+File.server.lua
+Nicklaus_s
+25 September 2022
+
+File that handles essentials for the game to run.
+Initializes all modules in a specific order.
+--]]
+
+local Workspace = game:GetService('Workspace')
+local Players = game:GetService('Players')
+local ReplicatedStorage = game:GetService('ReplicatedStorage')
+
+local Modules = ReplicatedStorage.Modules
+local Data = require(Modules.Data)
+
+local Player = Players.LocalPlayer
+local PlayerGui = Player:WaitForChild('PlayerGui')
+
+local Asset = Workspace:WaitForChild('Asset')
+```
 
 ## Comments
 Comments should be kept to a minimum. You should document your code well when needed - such as describing a series of semantics used to achieve something and when your code doesn't express those semantics clearly.
@@ -42,8 +98,6 @@ end
 ```
 
 ## Variables
-
-## File Structure
 
 # Attributions
 Formal attributions are provided here.
