@@ -53,12 +53,12 @@ I'll show an example below.
 
 ```lua
 --[[
-File.server.lua
-Nicklaus_s
-25 September 2022
+	File.server.lua
+	Nicklaus_s
+	25 September 2022
 
-File that handles essentials for the game to run.
-Initializes all modules in a specific order.
+	File that handles essentials for the game to run.
+	Initializes all modules in a specific order.
 --]]
 
 local Workspace = game:GetService('Workspace')
@@ -79,22 +79,22 @@ Comments should be kept to a minimum. You should document your code well when ne
 
 Libraries follow different rules, you should be documenting each function well. Someone shouldn't have to read your functions just to figure out how to use them.
 
-Comments shouldn't be placed inside scopes (don't follow this heavily, it's just a basic guideline). Comments should not be hidden. An example of this is if your documenting a function. You should put the comment before the function is declared (code example provided below).
+Comments shouldn't be placed inside scopes (don't follow this heavily, it's just a basic guideline). Comments should not be hidden. An example of this is if you're documenting a function. You should put the comment before the function is declared (code example provided below).
 
 ```lua
 --[[
-Used to test our library.
+	Used to test our library.
 
-@param Statement string
-The statement which is echoed back.
+	@param Statement string
+	The statement which is echoed back.
 
-@return nil
-This function does not return anything.
---]]
+	@return nil
+	This function does not return anything.
+	--]]
 
-function Library.Test(Statement: string): nil
-    print(Statement)
-end
+	function Library.Test(Statement: string): nil
+		print(Statement)
+	end
 ```
 
 ## Variables
