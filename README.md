@@ -34,7 +34,7 @@ Files should consist of these things in order.
 ```
 
 * Services used by the file
-  * All services should be received by using `DataModel:GetService()`
+  * All services should be received by using `game:GetService()`
 
 * Module imports
 
