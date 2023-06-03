@@ -24,12 +24,12 @@ Files should consist of these things in order.
 * Block comment that mentions basic information about the file.
 ```lua
 --[[
-File.server.lua
-Nicklaus_s
-25 September 2022
+	File.server.lua
+	Nicklaus_s
+	25 September 2022
 
-File that handles essentials for the game to run.
-Initializes all modules in a specific order.
+	File that handles essentials for the game to run.
+	Initializes all modules in a specific order.
 --]]
 ```
 
@@ -90,7 +90,7 @@ Comments shouldn't be placed inside scopes (don't follow this heavily, it's just
 
 	@return nil
 	This function does not return anything.
-	--]]
+--]]
 
 	function Library.Test(Statement: string): nil
 		print(Statement)
